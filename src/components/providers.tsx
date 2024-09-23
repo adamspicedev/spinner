@@ -1,9 +1,13 @@
 "use client";
 
-import { ReactNode } from "react";
-
+import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { type ThemeProviderProps } from "next-themes/dist/types";
 
-export default function Providers({ children }: { children: ReactNode }) {
-  return <NextThemesProvider attribute="class">{children}</NextThemesProvider>;
+export default function Providers({ children }: ThemeProviderProps) {
+  return (
+    <ClerkProvider>
+      <NextThemesProvider attribute="class">{children}</NextThemesProvider>
+    </ClerkProvider>
+  );
 }

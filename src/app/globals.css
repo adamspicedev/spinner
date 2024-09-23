@@ -1,3 +1,122 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-4xl font-bold md:text-6xl xl:text-7xl;
+  }
+  h2 {
+    @apply text-xl font-medium lg:text-4xl;
+  }
+  h3 {
+    @apply text-2xl font-medium lg:text-4xl;
+  }
+  a {
+    @apply hover:cursor-pointer;
+  }
+  button {
+    @apply bg-purple-600 hover:cursor-pointer hover:bg-purple-700;
+  }
+  /* Markdown content styles */
+  .markdown-content {
+    @apply mx-auto;
+  }
+  .markdown-content h1 {
+    @apply mb-4 mt-8 text-3xl font-bold;
+  }
+  .markdown-content h2 {
+    @apply mb-3 mt-6 text-2xl font-semibold;
+  }
+  .markdown-content h3 {
+    @apply mb-2 mt-4 text-xl font-medium;
+  }
+  .markdown-content p {
+    @apply mb-4 leading-7;
+  }
+  .markdown-content ul,
+  .markdown-content ol {
+    @apply mb-4 pl-6;
+  }
+  .markdown-content li {
+    @apply mb-2 list-disc;
+  }
+  .markdown-content a {
+    @apply text-blue-600 hover:underline;
+  }
+  .markdown-content blockquote {
+    @apply my-4 border-l-4 border-gray-300 pl-4 italic;
+  }
+  .markdown-content code {
+    @apply rounded bg-gray-100 px-1 py-0.5 font-mono text-sm;
+  }
+  .markdown-content pre {
+    @apply my-4 overflow-x-auto rounded bg-gray-100 p-4;
+  }
+  .markdown-content pre code {
+    @apply bg-transparent p-0;
+  }
+}
